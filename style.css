@@ -1,0 +1,832 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    overflow:hidden;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(
+        -45deg,
+        #050816,
+        #111827,
+        #312e81,
+        #0f172a,
+        #1e3a8a
+    );
+
+    background-size:400% 400%;
+    animation:bgAnimation 15s ease infinite;
+}
+
+/* ===========================
+   ANIMATED BACKGROUND
+=========================== */
+
+@keyframes bgAnimation{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+.background{
+
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-1;
+
+}
+
+/* ===========================
+   GLOWING CIRCLES
+=========================== */
+
+.circle{
+
+    position:absolute;
+    border-radius:50%;
+    filter:blur(40px);
+    opacity:.45;
+
+}
+
+.c1{
+
+    width:260px;
+    height:260px;
+
+    background:#3b82f6;
+
+    top:-60px;
+    left:-40px;
+
+    animation:float1 18s infinite alternate;
+
+}
+
+.c2{
+
+    width:320px;
+    height:320px;
+
+    background:#9333ea;
+
+    right:-100px;
+    top:80px;
+
+    animation:float2 22s infinite alternate;
+
+}
+
+.c3{
+
+    width:240px;
+    height:240px;
+
+    background:#06b6d4;
+
+    bottom:-60px;
+    left:20%;
+
+    animation:float3 18s infinite alternate;
+
+}
+
+.c4{
+
+    width:220px;
+    height:220px;
+
+    background:#2563eb;
+
+    right:25%;
+    bottom:-80px;
+
+    animation:float2 20s infinite alternate;
+
+}
+
+.c5{
+
+    width:180px;
+    height:180px;
+
+    background:#7c3aed;
+
+    left:50%;
+    top:40%;
+
+    animation:float1 15s infinite alternate;
+
+}
+
+/* ===========================
+   FLOAT ANIMATIONS
+=========================== */
+
+@keyframes float1{
+
+    from{
+
+        transform:
+        translateY(0)
+        translateX(0);
+
+    }
+
+    to{
+
+        transform:
+        translateY(120px)
+        translateX(80px);
+
+    }
+
+}
+
+@keyframes float2{
+
+    from{
+
+        transform:
+        translateY(0)
+        translateX(0);
+
+    }
+
+    to{
+
+        transform:
+        translateY(-100px)
+        translateX(-80px);
+
+    }
+
+}
+
+@keyframes float3{
+
+    from{
+
+        transform:
+        scale(1)
+        translateX(0);
+
+    }
+
+    to{
+
+        transform:
+        scale(1.2)
+        translateX(120px);
+
+    }
+
+}
+
+/* ===========================
+   CALCULATOR
+=========================== */
+
+.calculator{
+
+    width:400px;
+
+    padding:30px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(25px);
+
+    -webkit-backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+
+        0 10px 40px rgba(0,0,0,.4),
+
+        inset 0 0 15px rgba(255,255,255,.08),
+
+        0 0 35px rgba(59,130,246,.18);
+
+    animation:fadeIn 1s ease;
+
+}
+
+/* ===========================
+   FADE IN
+=========================== */
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+        translateY(40px)
+        scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.heading{
+
+    text-align:center;
+    margin-bottom:25px;
+
+}
+
+.heading h1{
+
+    color:#fff;
+
+    font-size:34px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+.heading p{
+
+    color:#cbd5e1;
+
+    font-size:14px;
+
+    margin-top:5px;
+
+    letter-spacing:2px;
+
+}
+
+/* ===========================
+   DISPLAY
+=========================== */
+
+.display{
+
+    background:rgba(0,0,0,.35);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    margin-bottom:25px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+
+        inset 0 0 15px rgba(0,0,0,.6),
+
+        inset 0 0 8px rgba(255,255,255,.05),
+
+        0 0 18px rgba(59,130,246,.18);
+
+}
+
+/* Previous Calculation */
+
+.history{
+
+    color:#94a3b8;
+
+    text-align:right;
+
+    font-size:15px;
+
+    min-height:22px;
+
+    overflow:hidden;
+
+    margin-bottom:10px;
+
+}
+
+/* Display Input */
+
+.display input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    background:transparent;
+
+    color:white;
+
+    text-align:right;
+
+    font-size:42px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    overflow-x:auto;
+
+}
+
+.display input::placeholder{
+
+    color:#fff;
+
+}
+
+/* Glow */
+
+.display:hover{
+
+    box-shadow:
+
+        inset 0 0 15px rgba(0,0,0,.7),
+
+        0 0 25px rgba(56,189,248,.35);
+
+    transition:.4s;
+
+}
+/* ===========================
+   BUTTON GRID
+=========================== */
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+/* ===========================
+   DEFAULT BUTTON
+=========================== */
+
+.btn{
+    position:relative;
+    height:68px;
+    border:none;
+    outline:none;
+    border-radius:18px;
+    cursor:pointer;
+    overflow:hidden;
+
+    color:#fff;
+    font-size:22px;
+    font-weight:600;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:
+        0 8px 18px rgba(0,0,0,.25),
+        inset 0 0 12px rgba(255,255,255,.05);
+
+    transition:.3s ease;
+}
+
+/* ===========================
+   SHINE EFFECT
+=========================== */
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120%;
+    height:100%;
+
+    top:0;
+    left:-130%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+.btn:hover::before{
+
+    left:130%;
+
+}
+
+/* ===========================
+   HOVER
+=========================== */
+
+.btn:hover{
+
+    transform:
+        translateY(-6px)
+        scale(1.04);
+
+    box-shadow:
+        0 15px 30px rgba(0,0,0,.35),
+        0 0 18px rgba(59,130,246,.45);
+
+}
+
+/* ===========================
+   CLICK
+=========================== */
+
+.btn:active{
+
+    transform:
+        scale(.95);
+
+}
+
+/* ===========================
+   NUMBER BUTTONS
+=========================== */
+
+.btn:not(.operator):not(.danger):not(.warning):not(.equal){
+
+    background:rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+   OPERATOR
+=========================== */
+
+.operator{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+}
+
+.operator:hover{
+
+    box-shadow:
+        0 0 25px #3b82f6,
+        0 0 45px rgba(59,130,246,.4);
+
+}
+
+/* ===========================
+   AC
+=========================== */
+
+.danger{
+
+    background:linear-gradient(
+        135deg,
+        #ef4444,
+        #dc2626
+    );
+
+}
+
+.danger:hover{
+
+    box-shadow:
+        0 0 25px #ef4444,
+        0 0 40px rgba(239,68,68,.4);
+
+}
+
+/* ===========================
+   DEL
+=========================== */
+
+.warning{
+
+    background:linear-gradient(
+        135deg,
+        #f59e0b,
+        #ea580c
+    );
+
+}
+
+.warning:hover{
+
+    box-shadow:
+        0 0 25px #f59e0b,
+        0 0 40px rgba(245,158,11,.4);
+
+}
+
+/* ===========================
+   EQUAL BUTTON
+=========================== */
+
+.equal{
+
+    grid-column:span 2;
+
+    background:linear-gradient(
+        135deg,
+        #10b981,
+        #06b6d4
+    );
+
+}
+
+.equal:hover{
+
+    box-shadow:
+        0 0 28px #10b981,
+        0 0 45px rgba(16,185,129,.45);
+
+}
+
+/* ===========================
+   ZERO BUTTON
+=========================== */
+
+.zero{
+
+    grid-column:span 2;
+
+}
+
+/* ===========================
+   RIPPLE EFFECT
+=========================== */
+
+.btn::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:0;
+    height:0;
+
+    left:50%;
+    top:50%;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:translate(-50%,-50%);
+
+    transition:.45s;
+
+}
+
+.btn:active::after{
+
+    width:220px;
+    height:220px;
+
+    opacity:0;
+
+}
+
+/* ===========================
+   FLOATING ANIMATION
+=========================== */
+
+.calculator{
+
+    animation:
+        fadeIn .9s ease,
+        floating 6s ease-in-out infinite;
+
+}
+
+@keyframes floating{
+
+    0%{
+
+        transform:
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   DISPLAY GLOW
+=========================== */
+
+.display{
+
+    transition:.4s;
+
+}
+
+.display:hover{
+
+    transform:scale(1.01);
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:7px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px){
+
+    .calculator{
+
+        width:92%;
+        padding:24px;
+
+    }
+
+    .heading h1{
+
+        font-size:28px;
+
+    }
+
+    .display input{
+
+        font-size:34px;
+
+    }
+
+    .btn{
+
+        height:62px;
+        font-size:20px;
+
+    }
+
+}
+
+@media(max-width:480px){
+
+    body{
+
+        padding:15px;
+
+    }
+
+    .calculator{
+
+        width:100%;
+        padding:20px;
+        border-radius:24px;
+
+    }
+
+    .heading{
+
+        margin-bottom:18px;
+
+    }
+
+    .heading h1{
+
+        font-size:24px;
+
+    }
+
+    .heading p{
+
+        font-size:12px;
+
+    }
+
+    .display{
+
+        padding:18px;
+
+    }
+
+    .display input{
+
+        font-size:30px;
+
+    }
+
+    .history{
+
+        font-size:13px;
+
+    }
+
+    .buttons{
+
+        gap:12px;
+
+    }
+
+    .btn{
+
+        height:58px;
+        font-size:18px;
+        border-radius:16px;
+
+    }
+
+}
+
+/* ===========================
+   EXTRA GLOW
+=========================== */
+
+.calculator:hover{
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.45),
+        0 0 50px rgba(59,130,246,.25),
+        inset 0 0 15px rgba(255,255,255,.08);
+
+}
+
+/* ===========================
+   END
+=========================== */
